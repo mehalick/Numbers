@@ -1,0 +1,65 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+html {
+    overflow: hidden;
+    font-size: 62.5%;
+}
+
+#wrapper {
+    font-family: "Share Tech Mono", monospace;
+    font-weight: 400;
+    font-display: optional;
+    font-size: 1.1rem;
+    color: #444;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: 768px) {
+    #wrapper {
+        margin: 15px auto;
+        max-width: 768px;
+        font-size: 2.0rem;
+    }
+}
+
+main {
+    display: grid;
+    margin: 0 auto;
+    width: 100%;
+    grid-template-columns: 100%;
+    row-gap: 16px;
+}
+
+header {
+    padding: 12px;
+    background: #ff5722;
+    color: white;
+    text-align: center;
+    border-top: 12px solid #c41c00;
+}
+
+#numpad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#numpad button {
+    display: block;
+    width: 100%;
+    min-height: 50px;
+}
+
+.grid-results {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
