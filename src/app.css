@@ -1,3 +1,5 @@
+/* https://material.io/tools/color/#!/?view.left=0&view.right=0&primary.color=FF7043&secondary.color=8D6E63&primary.text.color=EFEBE9 */
+
 * {
     box-sizing: border-box;
 }
@@ -7,6 +9,7 @@ html, body {
     margin: 0;
     height: 100%;
     width: 100%;
+    background: #f5f5f6;
 }
 
 html {
@@ -14,7 +17,7 @@ html {
     font-size: 62.5%;
 }
 
-#wrapper {
+#wrapper, input {
     font-family: "Share Tech Mono", monospace;
     font-weight: 400;
     font-display: optional;
@@ -27,7 +30,10 @@ html {
 @media (min-width: 768px) {
     #wrapper {
         margin: 15px auto;
-        max-width: 768px;
+        max-width: 768px;       
+    }
+
+    #wrapper, input {
         font-size: 2.0rem;
     }
 }
@@ -42,24 +48,57 @@ main {
 
 header {
     padding: 12px;
-    background: #ff5722;
-    color: white;
+    background: #ff7043;
+    color: #efebe9;
     text-align: center;
-    border-top: 12px solid #c41c00;
+    border-top: 12px solid #c63f17;
 }
 
 #numpad {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2px;
 }
 
 #numpad button {
     display: block;
     width: 100%;
     min-height: 50px;
+    background-color: #E1E2E1;
+    border: none;
 }
 
 .grid-results {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    margin: 0 12px;
+    grid-template-columns: 1fr auto auto 1fr auto 16px 1fr auto auto 1fr auto;
+    row-gap: 12px;
+}
+
+.grid-results div {
+    align-self: center;
+}
+
+.field {
+    display: flex;
+}
+
+input {
+    text-align: right;
+}
+
+label {
+    background-color: #8d6e63;
+    color: white;
+}
+
+input, label {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #8d6e63;
+}
+
+equals {
+    padding: 8px;
 }

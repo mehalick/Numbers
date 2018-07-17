@@ -4,6 +4,7 @@
     var app = {
         buttons: document.querySelectorAll('button'),
         inputs: document.querySelectorAll('input'),
+        originals: document.querySelectorAll('input.original'),
         input: '',
         number: 0
     };
@@ -26,14 +27,21 @@
             app.input = app.input.concat(button.value);
             app.number = parseFloat(app.input);
 
-            console.log(app.number);
+            app.originals.forEach(input => {
+                input.value = app.number;
+            })
 
-            document.getElementById('temp-c-original').value = app.number;
-            document.getElementById('temp-f-converted').value = app.number * 9 / 5 + 32;
-            document.getElementById('temp-f-original').value = app.number;
-            document.getElementById('temp-c-converted').value = (app.number - 32) * 5 / 9;
+            document.getElementById('f').value = app.round(app.number * 9 / 5 + 32);
+            document.getElementById('c').value = app.round((app.number - 32) * 5 / 9);
+
+            document.getElementById('mi').value = app.round(app.number * 0.62137);
+            document.getElementById('km').value = app.round(app.number / 0.62137);
         });
     });
+
+    app.round = function(i) {
+        return Math.round(i * 100) /100;
+    }
 
     // if ('serviceWorker' in navigator) {
     //     navigator.serviceWorker
