@@ -76,6 +76,12 @@ header {
     row-gap: 12px;
 }
 
+@media (min-width: 768px) {
+    .grid-results {
+        margin: 0;
+    }
+}
+
 .grid-results div {
     align-self: center;
 }
