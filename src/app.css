@@ -66,6 +66,7 @@ header {
     min-height: 50px;
     background-color: #E1E2E1;
     border: none;
+    outline: none !important;
 }
 
 .grid-results {
