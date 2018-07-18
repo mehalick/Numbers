@@ -31,11 +31,24 @@
                 input.value = app.number;
             })
 
+            document.getElementById('10%').value = app.round(app.number + app.number * 0.10);
+            document.getElementById('15%').value = app.round(app.number + app.number * 0.15);
+            document.getElementById('20%').value = app.round(app.number + app.number * 0.20);
+
             document.getElementById('f').value = app.round(app.number * 9 / 5 + 32);
             document.getElementById('c').value = app.round((app.number - 32) * 5 / 9);
 
             document.getElementById('mi').value = app.round(app.number * 0.62137);
             document.getElementById('km').value = app.round(app.number / 0.62137);
+
+            document.getElementById('ft').value = app.round(app.number * 3.2808);
+            document.getElementById('m').value = app.round(app.number / 3.2808);
+
+            document.getElementById('in').value = app.round(app.number * 0.3937);
+            document.getElementById('cm').value = app.round(app.number / 0.3937);
+
+            document.getElementById('lbs').value = app.round(app.number * 2.2046);
+            document.getElementById('kg').value = app.round(app.number / 2.2046);
         });
     });
 
