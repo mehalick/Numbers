@@ -1,6 +1,12 @@
 (function () {
     'use strict';
 
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker
+            .register('./service-worker.js')
+            .then(function () { console.log('Service Worker Registered'); });
+    }
+
     var app = {
         buttons: document.querySelectorAll('button'),
         inputs: document.querySelectorAll('input'),
@@ -10,8 +16,8 @@
     };
 
     app.buttons.forEach(button => {
-        button.addEventListener('click', function(e){
-            
+        button.addEventListener('click', function (e) {
+
             var value = button.value;
             if (value === 'x') {
                 app.input = '';
@@ -23,7 +29,7 @@
 
                 return;
             }
-            
+
             app.input = app.input.concat(button.value);
             app.number = parseFloat(app.input);
 
@@ -52,14 +58,8 @@
         });
     });
 
-    app.round = function(i) {
-        return Math.round(i * 100) /100;
+    app.round = function (i) {
+        return Math.round(i * 100) / 100;
     }
-
-    // if ('serviceWorker' in navigator) {
-    //     navigator.serviceWorker
-    //         .register('./service-worker.js')
-    //         .then(function () { console.log('Service Worker Registered'); });
-    // }
 
 })();
