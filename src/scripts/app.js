@@ -60,6 +60,17 @@
 
     app.round = function (i) {
         return Math.round(i * 100) / 100;
-    }
+    };
+
+    app.copy = function () {
+        console.log(this.value);
+        this.select();
+        document.execCommand('copy');
+    };
+
+    app.inputs.forEach(input => {
+        console.log(input);
+        input.addEventListener('click', app.copy);
+    });
 
 })();

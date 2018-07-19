@@ -17,25 +17,14 @@ html {
     font-size: 62.5%;
 }
 
-#wrapper, input {
+#wrapper, button, input {
     font-family: "Share Tech Mono", monospace;
     font-weight: 400;
     font-display: optional;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: #444;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
-
-@media (min-width: 768px) {
-    #wrapper {
-        margin: 15px auto;
-        max-width: 768px;       
-    }
-
-    #wrapper, input {
-        font-size: 2.0rem;
-    }
 }
 
 main {
@@ -43,15 +32,76 @@ main {
     margin: 0 auto;
     width: 100%;
     grid-template-columns: 100%;
-    row-gap: 16px;
+    row-gap: 8px;
 }
 
 header {
     padding: 12px;
     background: #ff7043;
+    border-top: 12px solid #c63f17;
     color: #efebe9;
     text-align: center;
-    border-top: 12px solid #c63f17;
+    font-size: 2.0rem;
+}
+
+button {
+    display: block;
+    width: 100%;
+    min-height: 50px;
+    background-color: #e1e2e1;
+    border: none;
+    outline: none !important;
+    font-size: 1.8rem;
+}
+
+input {
+    outline: none !important;
+    text-align: right;
+    cursor: pointer;
+}
+
+label {
+    background-color: #8d6e63;
+    color: white;
+    text-align: center;
+}
+
+input, label {
+    display: block;
+    width: 100%;
+    padding: 8px 4px;
+    border: 1px solid #8d6e63;
+    font-size: 1.6rem;
+}
+
+spacer {
+    padding: 8px;
+}
+
+spacer.lined {
+    background: linear-gradient(0deg, #ff7043, #ff7043);
+    background-position: calc(50% - 4px);
+    background-repeat: repeat-x;
+    background-size: auto 4px;
+}
+
+@media (min-width: 768px) {
+    #wrapper {
+        margin: 16px auto;
+        max-width: 768px;       
+    }
+
+    header {
+        font-size: 2.2rem;
+    }
+
+    button {
+        font-size: 2.0rem;
+    }
+
+    input, label {
+        font-size: 1.8rem;
+    }
 }
 
 #numpad {
@@ -60,20 +110,11 @@ header {
     grid-gap: 2px;
 }
 
-#numpad button {
-    display: block;
-    width: 100%;
-    min-height: 50px;
-    background-color: #E1E2E1;
-    border: none;
-    outline: none !important;
-}
-
 .grid-results {
     display: grid;
     margin: 0 8px;
     grid-template-columns: 1fr auto auto 1fr auto auto 1fr auto auto 1fr auto;
-    row-gap: 12px;
+    row-gap: 8px;
 }
 
 @media (min-width: 768px) {
@@ -88,25 +129,4 @@ header {
 
 .field {
     display: flex;
-}
-
-input {
-    text-align: right;
-}
-
-label {
-    background-color: #8d6e63;
-    color: white;
-    text-align: center;
-}
-
-input, label {
-    display: block;
-    width: 100%;
-    padding: 8px 4px;
-    border: 1px solid #8d6e63;
-}
-
-equals {
-    padding: 8px;
 }
