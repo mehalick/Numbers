@@ -55,6 +55,9 @@
 
             document.getElementById('lbs').value = app.round(app.number * 2.2046);
             document.getElementById('kg').value = app.round(app.number / 2.2046);
+
+            document.getElementById('oz').value = app.round(app.number * 0.035274);
+            document.getElementById('g').value = app.round(app.number / 0.035274);
         });
     });
 
